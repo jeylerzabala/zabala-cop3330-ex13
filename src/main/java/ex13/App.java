@@ -36,5 +36,40 @@ so you can determine the initial amount you’d need to invest to reach a specif
 Implement this program as a GUI app that automatically updates the values when any value changes.
 */
 
+import java.util.Scanner;
+
 public class App {
+    public static void main(String[] args) {
+
+        int years, compounds;
+        double principal, interestRate, amount, roundedAmount;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the principal: ");
+        principal = sc.nextDouble();
+
+        Scanner sc2 = new Scanner(System.in);
+        System.out.print("Enter the rate of interest: ");
+        interestRate = sc.nextDouble();
+
+        Scanner sc3 = new Scanner(System.in);
+        System.out.print("Enter the number of years: ");
+        years = sc.nextInt();
+
+        Scanner sc4 = new Scanner(System.in);
+        System.out.print("What is the number of times the interest is compounded per year? ");
+        compounds = sc.nextInt();
+
+        //A = P(1 + r/n)^(n*t)
+
+        amount = principal * Math.pow(1 + ((interestRate/100)/compounds),(compounds * years));
+
+        roundedAmount = ((int) ((amount * 100.0) + ((amount < 0.0) ? -0.5 : 0.5))) / 100.0;
+
+        String strRoundedAmount = String.format("%.2f", roundedAmount);
+        String strPrincipal = String.format("%.2f", principal);
+
+        String output = String.format("$%s invested at %s%% for %s years compounded %s times per year is $%s.", strPrincipal, interestRate, years, compounds, strRoundedAmount);
+        System.out.println(output);
+    }
 }
