@@ -1,6 +1,10 @@
 package ex13;
 
 /*
+
+*  UCF COP3330 Summer 2021 Assignment 1 Solution
+*  Copyright 2021 Jeyler Zabala
+
 Exercise 13 - Determining Compound Interest
 Simple interest is something you use only when making a quick guess.
 Most investments use a compound interest formula, which will be much more accurate.
@@ -48,15 +52,12 @@ public class App {
         System.out.print("Enter the principal: ");
         principal = sc.nextDouble();
 
-        Scanner sc2 = new Scanner(System.in);
         System.out.print("Enter the rate of interest: ");
         interestRate = sc.nextDouble();
 
-        Scanner sc3 = new Scanner(System.in);
         System.out.print("Enter the number of years: ");
         years = sc.nextInt();
 
-        Scanner sc4 = new Scanner(System.in);
         System.out.print("What is the number of times the interest is compounded per year? ");
         compounds = sc.nextInt();
 
